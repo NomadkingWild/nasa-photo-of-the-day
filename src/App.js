@@ -30,9 +30,10 @@ useEffect(()=>{
 },[])
 
   return (
-    <h1>Astronomy Picture of the Day</h1>
-    <h2>Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</h2>
+    
     <div className='App-container'>
+      <h1>Astronomy Picture of the Day</h1>
+    <h2>Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. </h2>
     <div className="App">
       <Image />
     </div>

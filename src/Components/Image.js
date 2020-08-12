@@ -40,8 +40,10 @@ import { BASE_URL, API_KEY } from "../Components/Links";
       },[])
     
       return (
+      <div>
           <p>{date}</p>
         <img src={image} alt='logo'></img>
+        </div>
       );
     }
     
