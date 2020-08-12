@@ -1,13 +1,45 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import "./App.css";
+import axios from 'axios'
+import { BASE_URL, API_KEY } from "./Components/Links";
+
+import Info from './Components/Info'
+import Image from './Components/Image'
 
 function App() {
+const [nasa, setNasa] = useState([])
+const [info, setInfo] = useState(null)
+
+const openImage = ()=>{
+
+}
+const closeImage = ()=>{
+  
+}
+useEffect(()=>{
+  axios.get(`${BASE_URL}/planetary/apod?api_key=${API_KEY}`)
+  .then(res=>{
+    console.log(res.data)
+  })
+  .catch(err=>{
+   console.log(err) 
+  })
+  .finally(()=>{
+
+  })
+},[])
+
   return (
+    
+    <div className='App-container'>
+      <h1>Astronomy Picture of the Day</h1>
+    <h2>Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. </h2>
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <Image />
+    </div>
+    <div className="Info">
+      <Info />
+    </div>
     </div>
   );
 }
